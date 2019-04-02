@@ -26,7 +26,7 @@ class ImpersonatorController extends Controller
         $user = User::findOrFail($user_id);
 
         $meta = [
-            'user_id'  => $admin->id,
+            'user_id'  => $current->id,
             'back_url'  => url()->previous(),
             'target_user' => $user->id
         ];
