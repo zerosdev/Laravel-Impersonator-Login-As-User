@@ -1,7 +1,7 @@
 # Laravel Impersonator: Login As User
 Sometimes we (administrator/manager of website) need access to the user account to check the features on the user's side who are having problems. Even though the admin/manager has access to the database or system, in certain cases there are users who experience problems with their account and can only be checked from the related user account.
 
-This package is useful for doing this by log into the user account without having to know the user's password. And easily return to the admin account without having to logout first.
+This code is useful for doing this by log into the user account without having to know the user's password. And easily return to the admin account without having to logout first.
 
 ## Basic Of Usage
 
