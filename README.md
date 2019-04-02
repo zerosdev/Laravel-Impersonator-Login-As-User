@@ -1,2 +1,2 @@
-# Laravel Impersonate: Login As User
+# Laravel Impersonator: Login As User
 Impersonate login as user from Admin right
