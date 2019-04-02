@@ -28,7 +28,7 @@ To start impersonating user account:
 You need to login to the Admin account that has **admin** role, then access https://yourdomain.com/admin/impersonate/123, where **123** is the id of target user account.
 Now you are logged in as target user.
 
-To rollback to the admin account:
+To back to the admin account:
 
 Access https://yourdomain.com/impersonate/rollback
 
