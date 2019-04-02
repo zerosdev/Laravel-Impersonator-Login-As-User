@@ -8,9 +8,9 @@ class Impersonator
 {
 	public function handle($request, Closure $next)
 	{
-		if( Session::has('impersonate') )
+		if( Session::has('impersonation') )
         {
-            $s = json_decode(Session::get('impersonate'));
+            $s = json_decode(Session::get('impersonation'));
             if( json_last_error() === JSON_ERROR_NONE )
             {
                 if( isset($s->target_user) ) {

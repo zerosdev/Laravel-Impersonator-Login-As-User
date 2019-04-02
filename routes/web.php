@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/admin/impersonate/{user_id}', 'ImpersonateController@impersonate');
-Route::get('/impersonate/rollback', 'ImpersonateController@rollback');
+Route::get('/admin/impersonate/{user_id}', 'ImpersonatorController@impersonate');
+Route::get('/impersonator/rollback', 'ImpersonatorController@rollback');
 
 ?>

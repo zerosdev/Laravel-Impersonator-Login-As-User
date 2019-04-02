@@ -18,8 +18,8 @@ This package is useful for doing this by log into the user account without havin
 3. Add this example routes to your **routes/web.php**
 <pre><code>// Other routes
 
-Route::get('/admin/impersonate/{user_id}', 'ImpersonateController@impersonate');
-Route::get('/impersonate/rollback', 'ImpersonateController@rollback');</code></pre>
+Route::get('/admin/impersonate/{user_id}', 'ImpersonatorController@impersonate');
+Route::get('/impersonator/rollback', 'ImpersonatorController@rollback');</code></pre>
 
 ## Testing
 
@@ -30,8 +30,8 @@ Now you are logged in as target user.
 
 To back to the admin account:
 
-Access https://yourdomain.com/impersonate/rollback
+Access https://yourdomain.com/impersonator/rollback
 
 ## Important Note
 
-In the **app/Http/Controllers/ImpersonateController.php @ impersonate**, make sure you check whether the current user has admin rights. In the code we use an example from [Spatie Laravel Permission](https://github.com/spatie/laravel-permission) to check whether the current user has an admin role. If you use another package, you need to adjust the code with your package.
+In the **app/Http/Controllers/ImpersonatorController.php @ impersonate**, make sure you check whether the current user has admin rights. In the code we use an example from [Spatie Laravel Permission](https://github.com/spatie/laravel-permission) to check whether the current user has an admin role. If you use another package, you need to adjust the code with your package.

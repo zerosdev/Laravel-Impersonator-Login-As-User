@@ -6,7 +6,7 @@ use Auth, Session;
 use Illuminate\Http\Request;
 use App\User;
 
-class ImpersonateController extends Controller
+class ImpersonatorController extends Controller
 {
 	public function impersonate(Request $request, $user_id)
 	{
@@ -31,7 +31,7 @@ class ImpersonateController extends Controller
             'target_user' => $user->id
         ];
         
-        Session::put('impersonate', json_encode($meta));
+        Session::put('impersonation', json_encode($meta));
         
         ## Redirect to User Dashboard
         return redirect()->url('/dashboard');
@@ -44,14 +44,14 @@ class ImpersonateController extends Controller
 			abort(403);
 		}
 
-		if( Session::has('impersonate') )
+		if( Session::has('impersonation') )
         {
-            $s = json_decode(Session::get('impersonate'));
+            $s = json_decode(Session::get('impersonation'));
             if( json_last_error() === JSON_ERROR_NONE )
             {
                 if( isset($s->user_id) )
                 {
-                    Session::forget('impersonate');
+                    Session::forget('impersonation');
                     Auth::loginUsingId($s->user_id);
                     
                     # Redirect to back url
@@ -60,8 +60,7 @@ class ImpersonateController extends Controller
             }
         }
         
-        # Redirect to Admin dashboard
-        return redirect()->url('/admin');
+        return redirect()->url('/dashboard');
 	}
 }
 
