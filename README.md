@@ -7,7 +7,7 @@ This package is useful for doing this by log into the user account without havin
 
 1. Copy **app** folder into your project folder
 
-2. Edit your **app/Http/kernel.php** and add this following code to the **$middlewareGroups** property
+2. Edit your **app/Http/Kernel.php** and add this following code to the **$middlewareGroups** property
 <pre><code>protected $middlewareGroups = [
         'web' => [
             \\ Other middlewares
