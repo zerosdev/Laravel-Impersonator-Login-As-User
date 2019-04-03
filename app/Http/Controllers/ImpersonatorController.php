@@ -19,17 +19,18 @@ class ImpersonatorController extends Controller
 
         # Check if current user is Admin
         # Example from Spatie Laravel Permission to check if user has admin role
+        # Adjust this code with your package
         if( !$current->hasRole('admin') ) {
         	abort(403);
         }
 
         $user = User::findOrFail($user_id);
 
-        $meta = [
+        $meta = array(
             'user_id'  => $current->id,
             'back_url'  => url()->previous(),
             'target_user' => $user->id
-        ];
+        );
         
         Session::put('impersonation', json_encode($meta));
         
